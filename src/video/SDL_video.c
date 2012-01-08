@@ -33,6 +33,9 @@
 
 /* Available video drivers */
 static VideoBootStrap *bootstrap[] = {
+#if SDL_VIDEO_DRIVER_NACL
+	&NACL_bootstrap,
+#endif
 #if SDL_VIDEO_DRIVER_QUARTZ
 	&QZ_bootstrap,
 #endif
